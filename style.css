@@ -85,6 +85,7 @@ nav {
     font-size: 20px;
     margin-bottom: 40px;
     color: rgb(15, 14, 14);
+  margin-left:-20px;
 }
 
 ol {
@@ -102,6 +103,7 @@ ol li {
 ol li h3 {
     font-size: 1.6em;
     color: #4CAF50;
+  margin-left: -20px;
 }
 
 ol li p {
