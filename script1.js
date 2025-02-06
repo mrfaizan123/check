@@ -1,9 +1,9 @@
 
-// uers count
-let ab=document.getElementById('im");
-                               ab.addEventListener('click',function(){
-                                   alert("There are no any update!");
-                               });
+let m=document.getElementById('im');
+m.addEventListener('click',function(){
+alert('There are no any update');
+});
+
 function updateUserCount() {
     $.ajax({
         url: "../php/get_user_count.php",
@@ -74,13 +74,6 @@ function toggleDarkMode() {
       function toggleMenu() {
             document.querySelector("nav ul").classList.toggle("active");
         }
-
-
-
-
-
-
-
 // show reminder form
 function showRemind(){
     document.getElementById('remind-form').style.display="flex";
@@ -128,7 +121,6 @@ function showLoginForm() {
         }
     }, 10); 
 }
-
 function closeLoginForm() {
 
     document.getElementById("login-form").classList.remove("show");
@@ -171,7 +163,7 @@ function showUserProfile() {
         } else {
             status.innerText = "Active";
         }
-    }
+    
 
     button.addEventListener('click', function(event) {
         console.log(localStorage.clear('totalDonations'));
