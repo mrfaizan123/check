@@ -1,6 +1,9 @@
 
 // uers count
-
+let ab=document.getElementById('im");
+                               ab.addEventListener('click',function(){
+                                   alert("There are no any update!");
+                               });
 function updateUserCount() {
     $.ajax({
         url: "../php/get_user_count.php",
@@ -156,7 +159,6 @@ function showUserProfile() {
     
     const totalDonations = parseInt(localStorage.getItem("totalDonations")) || 0;
 
-    if (name) { 
         document.getElementById("profile-name").textContent = name;
         document.getElementById("result").textContent = `₹${totalDonations}`;
         
@@ -169,8 +171,6 @@ function showUserProfile() {
         } else {
             status.innerText = "Active";
         }
-    } else {
-        alert("No user data found. Please register first.");
     }
 
     button.addEventListener('click', function(event) {
