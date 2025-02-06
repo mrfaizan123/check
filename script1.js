@@ -168,10 +168,10 @@ function showUserProfile() {
             status.innerText = "Active";
         }
     
-
     button.addEventListener('click', function(event) {
         console.log(localStorage.clear('totalDonations'));
          alert("Sorry,the certificate could not be downloaded");
+        event.preventDefault();
     });
 }
 
