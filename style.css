@@ -105,7 +105,6 @@ ol li h3 {
     font-size: 1.6em;
     color: #4CAF50;
   margin-left: -20px;
- text-align:justify;
 }
 
 ol li p {
@@ -119,7 +118,6 @@ ol li p {
 .section {
     padding: 60px 20px;
     text-align: center;
- text-align: justify;
 }
 
 h2 {
@@ -194,7 +192,7 @@ p {
 .stat-card h3 {
     font-size: 2.5em;
     color: #4CAF50;
-  text-align:justify;
+
 }
 
 /* Donation Cards */
@@ -217,7 +215,7 @@ p {
 .donation-card h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
-  text-align:justify;
+ 
 }
 
 .cta-button {
