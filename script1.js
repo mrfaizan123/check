@@ -1,14 +1,15 @@
 
-let m=document.getElementById('im');
-m.addEventListener('click',function(event){
-alert('There are no any updates');
-    event.preventDefault();
-});
 
 function certificate(){
     alert("Please Register first💫for tracking your activity");
 }
 certificate();
+
+let m=document.getElementById('im');
+m.addEventListener('click',function(event){
+alert('There are no any updates');
+    event.preventDefault();
+});
 
 function updateUserCount() {
     $.ajax({
