@@ -1,8 +1,14 @@
 
 let m=document.getElementById('im');
-m.addEventListener('click',function(){
-alert('There are no any update');
+m.addEventListener('click',function(event){
+alert('There are no any updates');
+    event.preventDefault();
 });
+
+function certificate(){
+    alert("Please Register first💫for tracking your activity");
+}
+certificate();
 
 function updateUserCount() {
     $.ajax({
@@ -167,6 +173,7 @@ function showUserProfile() {
 
     button.addEventListener('click', function(event) {
         console.log(localStorage.clear('totalDonations'));
+         alert("Sorry,the certificate could not be downloaded");
     });
 }
 
