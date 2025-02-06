@@ -1,7 +1,15 @@
-function certificate(){
+function certificate() {
+    if (localStorage.getItem("alertShown")) {
+        return;
+    }
+    
     alert("Please Register first💫for tracking your activity");
+    
+    localStorage.setItem("alertShown", "true"); 
 }
+
 certificate();
+
 let m=document.getElementById('im');
 m.addEventListener('click',function(event){
 alert('There are no any updates');
