@@ -30,7 +30,7 @@ header{
 
  header nav ul li a{
     display: inline-block; 
-    height: 75px;
+    /* height: 75px; */
     line-height: 76px;
     padding: 0 15px;
     margin-right: 20px;
@@ -74,9 +74,10 @@ background-color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: linear-gradient(50deg, #161515, #010843);
+        background: linear-gradient(50deg, #000000, #010843);
         color: white;
         padding: 10px 20px;
+        height: 95px;
   
 
     } 
@@ -112,11 +113,14 @@ background-color: white;
            
         }
         .banner .donate-btn{
-            width: 220px;
-            height: 42px;
+            width: 250px;
+            height: 50px;
             padding: 5px 15px;
-            font-size: 18px;
+            font-size: 20px;
            
+        }
+        #navbar{
+            height: 80px;
         }
        
     }
@@ -153,7 +157,7 @@ background-color: white;
         width: 250px;
         height: 50px;
         margin-left: 150px;
-        background: linear-gradient(50deg,#ff0000,#e302b6, #0023b1);
+        background: linear-gradient(90deg ,#ff0000,#e302b6, #0023b1);
         background-size: 300%; 
         animation: gradientShift 4s infinite; 
         
@@ -175,7 +179,10 @@ background-color: white;
         }
 
     .logo img {
-        height: 40px;
+        height: 80px;
+        width: 85px;
+      color: #0023b1;
+
     }
     nav ul {
         display: flex;
@@ -212,7 +219,7 @@ background-color: white;
     }
 
     /* Responsive Styling */
-    @media (max-width: 850px) {
+    @media (max-width: 873px) {
         nav ul {
             display: none;
             flex-direction: column;
@@ -239,13 +246,18 @@ background-color: white;
         }
         #menuToggle {
             display: block;
-           bottom: 10px;
+           bottom: 25px;
             
         }
-        .dark-mode-toggle{
-           margin-top: -15px;
+        /* .dark-mode-toggle{
+           margin-top: -10px;
          
             
+        } */
+        .logo img{
+     height: 70px;
+     width: 70px;
+     
         }
     #container1 h4{
         margin-left:5px;
@@ -258,13 +270,17 @@ background-color: white;
     #container1 button{
         margin-left:20px;
         margin-top: 20px;
-       margin-bottom: 20px;
+       margin-bottom: 10px;
     }
     }
-/* @media(max-width:830px){
-
+     @media(max-width:500px){
+     .dark-mode-toggle{
+           margin-top: -10px;
+         
+            
+        } 
 }
-   */
+  
 #logoimg {
     border-radius: 1px;
 }
@@ -683,6 +699,7 @@ animation: gradientShift 4s infinite;
     right: 2.5px;
     padding: 15px;
     font-size: 1.2rem;
+    text-align: justify;
     color: white;
     background: rgba(0, 0, 0, 0.8); 
     transform: translateY(100%); 
@@ -697,14 +714,14 @@ animation: gradientShift 4s infinite;
 
  .box button {
 
-    width: 250px;
+    width: 275px;
     margin-top: 50px;
     padding: 10px 20px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
     border: none;
-    border-radius: 15px; 
+    border-radius: 10px; 
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); 
@@ -1087,9 +1104,9 @@ animation: gradientShift 4s infinite;
 
 .joinNow {
     position: absolute;
-    bottom: 100px;
+    bottom: 70px;
     left: 50px;
-    height: 48px;
+    height: 50px;
     padding: 10px 50px;
     font-size: 1.4rem;
     font-weight: bold;
@@ -1197,7 +1214,18 @@ animation: gradientShift 4s infinite;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         animation: fadeIn 0.5s ease-in-out;
     }
-    
+    #sub {
+        width: 100%;
+        background: #2cc71e;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        margin-top: 10px;
+    }
 
     .remind-form {
         display: none;
@@ -1268,7 +1296,7 @@ animation: gradientShift 4s infinite;
         cursor: pointer;
     }
     
-    button[type="submit"]:hover {
+    button[type="submit"],:hover{
         background-color: #45a049;
     }
     
