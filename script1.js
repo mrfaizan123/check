@@ -66,10 +66,10 @@ function toggleDarkMode() {
 
    let get=document.getElementById('dark');
     if(get.style.backgroundColor=='black'){
-        get.style.backgroundColor=='white';
+        get.style.backgroundColor='white';
   }
     else{
-         get.style.backgroundColor=='black';
+         get.style.backgroundColor='black';
     }
 }
   function toggleMenu() {
