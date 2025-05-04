@@ -8,11 +8,11 @@
 //     localStorage.setItem("alertShown", "true"); 
 // }
 
-certificate();
+// certificate();
 
-let m=document.getElementById('im');
-m.addEventListener('click',function(event){
-alert('There are no any updates');
+let m = document.getElementById('im');
+m.addEventListener('click', function(event) {
+    alert('There are no any update');
     event.preventDefault();
 });
 
@@ -45,96 +45,78 @@ setInterval(updateUserCount, 3000);
 updateUserCount();
 
 const images = [
-    "img1.jpg",
-    "img2_s.jpeg",
-    "img6.avif",
+    "../images/img1.jpg",
+    "../images/img2_s.jpeg",
+    "../images/img6.avif",
     "https://assets.change.org/photos/3/td/cz/pytdCZcRKwxmInH-1600x900-noPad.jpg?1589957690",
-    "image15.png",
-    "image8.png",
+    "../images/image15.png",
+    "../images/image8.png",
 ];
 
-// let currentIndex = 0;
-// const bannerElement = document.querySelector(".banner");
+let currentIndex = 0;
+const bannerElement = document.querySelector(".banner");
 
-// function changeBackgroundImage() {
-//     currentIndex = (currentIndex + 1) % images.length;
-//     bannerElement.style.backgroundImage = `url("${images[currentIndex]}")`;
-// }
-// setInterval(changeBackgroundImage, 5000);
+function changeBackgroundImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    bannerElement.style.backgroundImage = `url("${images[currentIndex]}")`;
+}
+
+setInterval(changeBackgroundImage, 5000);
 
 function toggleDarkMode() {
-// get id the body
-  //code
+    //code
 }
-  function toggleMenu() {
-        const menu = document.getElementById("navMenu");
-        if (menu.style.display === "block") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "block";
-        }
-      }
 
-     
-      function toggleMenu() {
-            document.querySelector("nav ul").classList.toggle("active");
-        }
+function toggleMenu() {
+    document.querySelector("nav ul").classList.toggle("active");
+}
+
 // show reminder form
-function showRemind(){
-    document.getElementById('remind-form').style.display="flex";
-    setTimeout(function(){
+function showRemind() {
+    document.getElementById('remind-form').style.display = "flex";
+    setTimeout(function() {
         document.getElementById('remind-form').classList.add('show');
     })
 }
 
-
 function closeRemindForm() {
-
     document.getElementById("remind-form").classList.remove("show");
-    
     setTimeout(function() {
         document.getElementById("remind-form").style.display = "none";
     }, 300); 
-} 
+}
 
 function handleFormSubmit1(event) {
     let get = document.getElementById("num").value;
-   
     console.log(get);
-  
-    if(get.length<10){
+
+    if (get.length < 10) {
         alert("please Enter 10 digit number!");
-    }
-    else{
-    event.target.submit();
-    event.target.reset();
-    alert("Thank You for Reminder!");
+    } else {
+        event.target.submit();
+        event.target.reset();
+        alert("Thank You for Reminder!");
     }
     event.preventDefault(); 
 }
-
-
 
 function showLoginForm() {
     document.getElementById("login-form").style.display = "flex";
     setTimeout(function() {
         document.getElementById("login-form").classList.add("show");
-
         const form = document.querySelector("#login-form form");
         if (form) {
             form.reset();
         }
     }, 10); 
 }
-function closeLoginForm() {
 
+function closeLoginForm() {
     document.getElementById("login-form").classList.remove("show");
-    
     setTimeout(function() {
         document.getElementById("login-form").style.display = "none";
     }, 300); 
-} 
-
+}
 
 function handleFormSubmit(event) {
     event.preventDefault(); 
@@ -142,9 +124,7 @@ function handleFormSubmit(event) {
     localStorage.setItem("name", name);
     event.target.submit();
     event.target.reset();
-
 }
-
 
 function showUserProfile() {
     const name = localStorage.getItem("name");
@@ -156,11 +136,9 @@ function showUserProfile() {
     
     const totalDonations = parseInt(localStorage.getItem("totalDonations")) || 0;
 
+    if (name) { 
         document.getElementById("profile-name").textContent = name;
         document.getElementById("result").textContent = `₹${totalDonations}`;
-        
-        const level = updateLevel(totalDonations);
-        updateCircularProgress(totalDonations, level);
 
         let check = document.getElementById("profile-box").style.display = "flex";
         if (check === "") {
@@ -168,141 +146,16 @@ function showUserProfile() {
         } else {
             status.innerText = "Active";
         }
-    
+    } else {
+        alert("No user data found. Please register first.");
+    }
+
     button.addEventListener('click', function(event) {
         console.log(localStorage.clear('totalDonations'));
-         alert("Sorry,the certificate could not be downloaded");
-        event.preventDefault();
+        alert("Sorry, the certificate could not be downloaded");
     });
 }
 
 function closeUserProfile() {
-
     document.getElementById("profile-box").style.display = "none";
-
 }
-
-function updateLevel(totalDonations) {
-    document.getElementById("level").style.color='Blue';
-    let level = "Sprout";  
-
-    if (totalDonations >= 200 && totalDonations <= 500) {
-        level = "Advocate";  
-    } else if (totalDonations > 500) {
-        level = "Pioneer";  
-    }
-
-    
-    document.getElementById("level").textContent = level;
-   
-    return level;
-
-}
-
-// const totalLines = 100;
-
-// function updateCircularProgress(totalDonations, level) {
-//     const linesContainer = document.getElementById("lines-container");
-//     const levelLabel = document.getElementById("level-label");
-//     linesContainer.innerHTML = "";
-
-//     const thresholds = { sprout: 200, advocate: 500, max: 1000 }; 
-//     const sproutFill = Math.floor((thresholds.sprout / thresholds.max) * totalLines);
-//     const advocateFill = Math.floor((thresholds.advocate / thresholds.max) * totalLines);
-//     const fillLines = Math.min(Math.floor((totalDonations / thresholds.max) * totalLines), totalLines);
-
-//     for (let i = 0; i < totalLines; i++) {
-//         const line = document.createElement("div");
-//         line.classList.add("line");
-//         line.style.transform = `rotate(${(220 / totalLines) * i}deg)`;
-//         line.style.background = "white"; 
-
-//         if (i < fillLines) {
-//             if (i < sproutFill) {
-//                 line.style.background = "rgb(3, 31, 193)"; 
-//             } else if (i < advocateFill) {
-//                 line.style.background = "rgb(234, 0, 0)"; 
-//             } else {
-//                 line.style.background = "rgb(9, 255, 0)"; 
-//             }
-//             line.style.boxShadow = `0 0 10px ${line.style.background}`;
-//         }
-
-//         linesContainer.appendChild(line);
-//     }
-
-    
-//     levelLabel.textContent = level;
-
-    
-//     if (level === "Pioneer") {
-//         linesContainer.style.animation = "pulse 2s infinite";
-//     } else {
-//         linesContainer.style.animation = "";
-//     }
-// }
-
-
-
-
-
-//   Donatio box open
-// const donateBtn = document.getElementById('donateBtn');
-// const donateModal = document.getElementById('donateModal');
-// const closeModal = document.getElementById('closeModal');
-
-
-// donateBtn.addEventListener('click', () => {
-//     donateModal.style.display = 'flex';
-// });
-
-
-// closeModal.addEventListener('click', () => {
-//     donateModal.style.display = 'none';
-// });
-
-// Close Modal on Outside Click
-window.addEventListener('click', (event) => {
-    if (event.target === donateModal) {
-        donateModal.style.display = 'none';
-    }
-});
-
-
-    // Function to toggle dark mode
-  
-
-// level setup
-let dnt=document.getElementById('result');
-let level=document.getElementById('level');
-if(dnt<40){
-level.innerText=dnt;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
