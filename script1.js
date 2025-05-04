@@ -199,48 +199,48 @@ function updateLevel(totalDonations) {
 
 }
 
-const totalLines = 100;
+// const totalLines = 100;
 
-function updateCircularProgress(totalDonations, level) {
-    const linesContainer = document.getElementById("lines-container");
-    const levelLabel = document.getElementById("level-label");
-    linesContainer.innerHTML = "";
+// function updateCircularProgress(totalDonations, level) {
+//     const linesContainer = document.getElementById("lines-container");
+//     const levelLabel = document.getElementById("level-label");
+//     linesContainer.innerHTML = "";
 
-    const thresholds = { sprout: 200, advocate: 500, max: 1000 }; 
-    const sproutFill = Math.floor((thresholds.sprout / thresholds.max) * totalLines);
-    const advocateFill = Math.floor((thresholds.advocate / thresholds.max) * totalLines);
-    const fillLines = Math.min(Math.floor((totalDonations / thresholds.max) * totalLines), totalLines);
+//     const thresholds = { sprout: 200, advocate: 500, max: 1000 }; 
+//     const sproutFill = Math.floor((thresholds.sprout / thresholds.max) * totalLines);
+//     const advocateFill = Math.floor((thresholds.advocate / thresholds.max) * totalLines);
+//     const fillLines = Math.min(Math.floor((totalDonations / thresholds.max) * totalLines), totalLines);
 
-    for (let i = 0; i < totalLines; i++) {
-        const line = document.createElement("div");
-        line.classList.add("line");
-        line.style.transform = `rotate(${(220 / totalLines) * i}deg)`;
-        line.style.background = "white"; 
+//     for (let i = 0; i < totalLines; i++) {
+//         const line = document.createElement("div");
+//         line.classList.add("line");
+//         line.style.transform = `rotate(${(220 / totalLines) * i}deg)`;
+//         line.style.background = "white"; 
 
-        if (i < fillLines) {
-            if (i < sproutFill) {
-                line.style.background = "rgb(3, 31, 193)"; 
-            } else if (i < advocateFill) {
-                line.style.background = "rgb(234, 0, 0)"; 
-            } else {
-                line.style.background = "rgb(9, 255, 0)"; 
-            }
-            line.style.boxShadow = `0 0 10px ${line.style.background}`;
-        }
+//         if (i < fillLines) {
+//             if (i < sproutFill) {
+//                 line.style.background = "rgb(3, 31, 193)"; 
+//             } else if (i < advocateFill) {
+//                 line.style.background = "rgb(234, 0, 0)"; 
+//             } else {
+//                 line.style.background = "rgb(9, 255, 0)"; 
+//             }
+//             line.style.boxShadow = `0 0 10px ${line.style.background}`;
+//         }
 
-        linesContainer.appendChild(line);
-    }
-
-    
-    levelLabel.textContent = level;
+//         linesContainer.appendChild(line);
+//     }
 
     
-    if (level === "Pioneer") {
-        linesContainer.style.animation = "pulse 2s infinite";
-    } else {
-        linesContainer.style.animation = "";
-    }
-}
+//     levelLabel.textContent = level;
+
+    
+//     if (level === "Pioneer") {
+//         linesContainer.style.animation = "pulse 2s infinite";
+//     } else {
+//         linesContainer.style.animation = "";
+//     }
+// }
 
 
 
