@@ -53,15 +53,15 @@ const images = [
     "../images/image8.png",
 ];
 
-let currentIndex = 0;
-const bannerElement = document.querySelector(".banner");
+// let currentIndex = 0;
+// const bannerElement = document.querySelector(".banner");
 
-function changeBackgroundImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    bannerElement.style.backgroundImage = `url("${images[currentIndex]}")`;
-}
+// function changeBackgroundImage() {
+//     currentIndex = (currentIndex + 1) % images.length;
+//     bannerElement.style.backgroundImage = `url("${images[currentIndex]}")`;
+// }
 
-setInterval(changeBackgroundImage, 5000);
+// setInterval(changeBackgroundImage, 5000);
 
 function toggleDarkMode() {
     //code
