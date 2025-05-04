@@ -1,12 +1,12 @@
-function certificate() {
-    if (localStorage.getItem("alertShown")) {
-        return;
-    }
+// function certificate() {
+//     if (localStorage.getItem("alertShown")) {
+//         return;
+//     }
     
-    alert("Please Register first💫for tracking your activity");
+//     alert("Please Register first💫for tracking your activity");
     
-    localStorage.setItem("alertShown", "true"); 
-}
+//     localStorage.setItem("alertShown", "true"); 
+// }
 
 certificate();
 
@@ -53,26 +53,25 @@ const images = [
     "image8.png",
 ];
 
-let currentIndex = 0;
-const bannerElement = document.querySelector(".banner");
+// let currentIndex = 0;
+// const bannerElement = document.querySelector(".banner");
 
-function changeBackgroundImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    bannerElement.style.backgroundImage = `url("${images[currentIndex]}")`;
-}
-setInterval(changeBackgroundImage, 5000);
+// function changeBackgroundImage() {
+//     currentIndex = (currentIndex + 1) % images.length;
+//     bannerElement.style.backgroundImage = `url("${images[currentIndex]}")`;
+// }
+// setInterval(changeBackgroundImage, 5000);
 
 function toggleDarkMode() {
 
-    document.body.classList.toggle('dark-mode');
-  
-    const isDarkMode = document.body.classList.contains('dark-mode');
-
-    let dark=document.body.style.backgroundColor = isDarkMode ? 'rgb(6, 2, 53)' : 'azure';
-    document.body.style.color = isDarkMode ? '#ecf0f1' : '#333';
-
+   let get=document.getElementById('dark');
+    if(get.style.backgroundColor=='black'){
+        get.style.backgroundColor=='white';
   }
-
+    else{
+         get.style.backgroundColor=='black';
+    }
+}
   function toggleMenu() {
         const menu = document.getElementById("navMenu");
         if (menu.style.display === "block") {
