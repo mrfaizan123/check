@@ -63,14 +63,8 @@ const images = [
 // setInterval(changeBackgroundImage, 5000);
 
 function toggleDarkMode() {
-
-   let get=document.getElementById('dark');
-    if(get.style.backgroundColor=='black'){
-        get.style.backgroundColor='white';
-  }
-    else{
-         get.style.backgroundColor='black';
-    }
+// get id the body
+  //code
 }
   function toggleMenu() {
         const menu = document.getElementById("navMenu");
