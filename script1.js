@@ -65,11 +65,13 @@ setInterval(changeBackgroundImage, 5000);
 
 function toggleDarkMode() {
     let get=document.getElementById('changeColor');
-    if(get.style.backgroundColor=='black'){
-        get.style.backgroundColor='white';
+    if(get.style.backgroundColor=='rgb(6, 2, 53)'){
+        get.style.backgroundColor='azure';
+          get.style.color='#333';
 }
     else{
-        get.style.backgroundColor='black';
+        get.style.backgroundColor='rgb(6, 2, 53)';
+        get.style.color='#ecf0f1';
     }
 }
         
@@ -143,7 +145,7 @@ function showUserProfile() {
     
     const totalDonations = parseInt(localStorage.getItem("totalDonations")) || 0;
 
-    if (name) { 
+    
         document.getElementById("profile-name").textContent = name;
         document.getElementById("result").textContent = `₹${totalDonations}`;
 
@@ -153,9 +155,7 @@ function showUserProfile() {
         } else {
             status.innerText = "Active";
         }
-    } else {
-        alert("No user data found. Please register first.");
-    }
+   
 
     button.addEventListener('click', function(event) {
         console.log(localStorage.clear('totalDonations'));
@@ -166,3 +166,55 @@ function showUserProfile() {
 function closeUserProfile() {
     document.getElementById("profile-box").style.display = "none";
 }
+
+// function to update profile
+function updateLevel(totalDonations) {
+    document.getElementById("level").style.color = 'Blue';
+    let level = "Sprout";
+
+    if (totalDonations >= 200 && totalDonations <= 500) {  
+        level = "Advocate";  
+    } else if (totalDonations > 500) {  
+        level = "Pioneer";  
+    }
+
+    document.getElementById("level").textContent = level;
+    return level;
+}
+
+// Circular Progress for Donation Levels
+function updateCircularProgress(totalDonations, level) {
+    const linesContainer = document.getElementById("lines-container");
+    const levelLabel = document.getElementById("level-label");
+    linesContainer.innerHTML = "";
+
+    const totalLines = 100;
+    const thresholds = { sprout: 200, advocate: 500, max: 1000 }; 
+    const sproutFill = Math.floor((thresholds.sprout / thresholds.max) * totalLines);
+    const advocateFill = Math.floor((thresholds.advocate / thresholds.max) * totalLines);
+    const fillLines = Math.min(Math.floor((totalDonations / thresholds.max) * totalLines), totalLines);
+
+    for (let i = 0; i < totalLines; i++) {
+        const line = document.createElement("div");
+        line.classList.add("line");
+        line.style.transform = rotate(${(220 / totalLines) * i}deg);
+        line.style.background = "white"; 
+         if (i < fillLines) {
+            if (i < sproutFill) {
+                line.style.background = "rgb(3, 31, 193)"; 
+            } else if (i < advocateFill) {
+                line.style.background = "rgb(234, 0, 0)"; 
+            } else {
+                line.style.background = "rgb(9, 255, 0)"; 
+            }
+            line.style.boxShadow = 0 0 10px ${line.style.background};
+        }
+
+        linesContainer.appendChild(line);
+    }
+
+    levelLabel.textContent = level;
+    linesContainer.style.animation = level === "Pioneer" ? "pulse 2s infinite" : "";
+}
+
+
